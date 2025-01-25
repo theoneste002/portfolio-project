@@ -1,43 +1,61 @@
 import React from "react";
-import { FaJs, FaHtml5, FaCss3Alt, FaReact, FaFigma, FaPython, FaGit } from "react-icons/fa";
+import { FaJs, FaHtml5, FaCss3Alt, FaReact, FaFigma, FaPython, FaGit, FaGithub, FaDatabase } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 
 const skillsData = [
-  { icon: <FaJs className="text-yellow-500 text-4xl" />, name: "JavaScript", level: "Advanced" },
-  { icon: <FaHtml5 className="text-red-500 text-4xl" />, name: "HTML", level: "Middle" },
-  { icon: <FaCss3Alt className="text-blue-500 text-4xl" />, name: "CSS", level: "Beginner" },
-  { icon: <FaReact className="text-blue-400 text-4xl" />, name: "React", level: "Intermediate" },
-  { icon: <SiTailwindcss className="text-teal-400 text-4xl" />, name: "Tailwind", level: "Intermediate" },
-  { icon: <FaFigma className="text-purple-400 text-4xl" />, name: "Figma", level: "Intermediate" },
-  { icon: <FaPython className="text-blue-500 text-4xl" />, name: "Python", level: "Intermediate" },
-  { icon: <FaGit className="text-orange-500 text-4xl" />, name: "Git", level: "Intermediate" },
+  { icon: <FaJs />, name: "JavaScript", color: "text-yellow-500 hover:bg-blue-900" },
+  { icon: <FaHtml5 />, name: "HTML", color: "text-red-500 hover:bg-pink-900" },
+  { icon: <FaCss3Alt />, name: "CSS", color: "text-blue-500 hover:bg-yellow-900" },
+  { icon: <FaReact />, name: "React", color: "text-blue-400 hover:bg-black-900" },
+  { icon: <SiTailwindcss />, name: "Tailwind", color: "text-teal-400 hover:bg-orange-900" },
+  { icon: <FaFigma />, name: "Figma", color: "text-purple-400 "},
+  { icon: <FaPython />, name: "Python", color: "text-blue-500" },
+  { icon: <FaGit />, name: "Git", color: "text-orange-500" },
+  { icon: <FaGithub />, name: "Github", color: "text-orange-500" },
+  { icon: <FaDatabase />, name: "Database", color: "text-orange-500" },
 ];
 
-const SkillCard = ({ icon, name, level }) => (
+const SkillCard = ({ icon, name, color }) => (
   <div
-    id="skills"
-    className="bg-green-500 w-40 h-48 shadow-sm rounded-lg hover:bg-blue-400 flex flex-col items-center gap-3 ">
-    {icon}
-    <span className="text-white text-md font-semibold">{name}</span>
-    <button className="bg-blue-800 text-emerald-50 py-1 px-4 rounded-lg text-sm">{level}</button>
+    className="bg-white bg-opacity-90 shadow-lg rounded-lg p-4 flex flex-col items-center space-y-2 
+               hover:bg-blue-400 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300"
+    tabIndex="0" // Enables focus on the card
+  >
+    <div
+      className={`text-3xl ${color} transition-transform duration-300 transform 
+                  hover:scale-125 focus:scale-125`}
+    >
+      {icon}
+    </div>
+    <span className="text-gray-800 font-medium">{name}</span>
   </div>
 );
 
 const Skills = () => {
   return (
-    <main className="h-screen flex flex-col justify-center items-center">
-      <h1 className="text-4xl font-extrabold text-blue-800 mb-10">Skills</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        {skillsData.map((skill, index) => (
-          <SkillCard key={index} icon={skill.icon} name={skill.name} level={skill.level} />
-        ))}
+    <section
+      id="skills"
+      className="py-16 bg-cover bg-center relative"
+      style={{
+        backgroundImage: `url('https://source.unsplash.com/1600x900/?technology,code')`,
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="relative container mx-auto text-center text-white">
+        <h2 className="text-3xl font-bold mb-8">My Skills</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          {skillsData.map((skill, index) => (
+            <SkillCard
+              key={index}
+              icon={skill.icon}
+              name={skill.name}
+              color={skill.color}
+            />
+          ))}
+        </div>
       </div>
-    </main>
+    </section>
   );
 };
 
 export default Skills;
-
-
-
-
