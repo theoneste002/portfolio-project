@@ -8,7 +8,7 @@ const AboutMe = () => {
       className="w-full bg-gradient-to-b from-gray-800 to-black text-white py-16 px-8"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl font-extrabold text-yellow-400 mb-6">
+        <h1 className="text-4xl font-extrabold text-blue-400 mb-6">
           About Me
         </h1>
         <p className="text-gray-300 text-lg mb-12">
@@ -43,14 +43,14 @@ const AboutMe = () => {
               people of the dev community. Feel free to connect with me on{" "}
               <a
                 href="#github"
-                className="text-yellow-400 underline hover:text-yellow-300"
+                className="text-yellow-400 underline hover:text-blue-300"
               >
                 github
               </a>{" "}
               and{" "}
               <a
                 href="#facebook"
-                className="text-yellow-400 underline hover:text-yellow-300"
+                className="text-yellow-400 underline hover:text-blue-300"
               >
                 facebook
               </a>

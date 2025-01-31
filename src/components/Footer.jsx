@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { href: "https://facebook.com", icon: faFacebook, label: "Facebook" },
+    { href: "https://facebook.com ", icon: faFacebook, label: "Facebook" },
     { href: "https://tiktok.com", icon: faTiktok, label: "Tiktok" },
     { href: "https://github.com", icon: faGithub, label: "Github" },
     { href: "https://whatsapp.com", icon: faWhatsapp, label: "Whatsapp" },
@@ -14,12 +14,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-200 flex flex-col items-center justify-center h-auto py-8  mt-20 gap-6 text-center">
+    <footer className="bg-gray-800 flex flex-col items-center justify-center h-auto py-8  mt-30 gap-6 text-center text-white ">
       <p className="font-bold text-lg hover:text-red-700">Theoneste</p>
 
       <p>&copy; {currentYear} All rights reserved.</p>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 ">
         {socialLinks.map(({ href, icon, label }) => (
           <a
             key={label}
@@ -27,14 +27,14 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="text-gray-700 text-2xl hover:text-green-400 transition-all duration-300 ease-in-out"
+            className="text-white-700 text-2xl hover:text-green-400 transition-all duration-300 ease-in-out"
           >
             <FontAwesomeIcon icon={icon} />
           </a>
         ))}
       </div>
 
-      <div className="flex flex-col items-center gap-2 text-gray-700 ">
+      <div className="flex flex-col items-center gap-2 text-gray-700 text-white">
         <a
           href="mailto:theonestehatunga002@gmail.com"
           className="flex items-center gap-2 text-lg hover:text-green-400 transition-colors duration-300"

@@ -2,8 +2,8 @@
 
 const ContactMe = () => {
   return (
-    <div id="contact"className="container bg-gray-600  mt-7 px-3 flex flex-col lg:flex-row gap-10   justify-center items-center bg-gray-100 ">
-      <section className="w-full lg:w-1/2 bg-white shadow-lg rounded-lg p-20  ">
+    <div id="contact"className="container bg-gray-600  mt-7 px-3 flex flex-col lg:flex-row gap-10   justify-center items-center bg-black-700 ">
+      <section className="w-full lg:w-1/2 bg-black shadow-lg rounded-lg p-20  ">
        
         <h2 className="text-3xl font-bold text-blue-800 text-center mb-6  hover:text-red-700 " > Contact Me</h2>
         <form className="space-y-4">
